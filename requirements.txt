@@ -1,0 +1,29 @@
+# offline-stt — Python dependencies
+# Install with: pip install -r requirements.txt
+#
+# Pinned to minor versions for reproducibility.
+# Tested on Python 3.10, 3.11, 3.12 — Windows / Linux / macOS.
+
+# ── Core transcription ────────────────────────────────────────────────────────
+faster-whisper>=1.0.0,<2.0.0       # CTranslate2-based Whisper — 4x faster than openai-whisper on CPU
+
+# ── Audio I/O ─────────────────────────────────────────────────────────────────
+soundfile>=0.12.1,<0.13.0           # WAV / FLAC / OGG loading (libsndfile wrapper)
+audioread>=3.0.0,<4.0.0             # MP3 / M4A loading (ffmpeg/libav backend)
+
+# ── Signal processing ─────────────────────────────────────────────────────────
+numpy>=1.24.0,<2.0.0                # Array operations
+scipy>=1.11.0,<2.0.0                # Resampling (resample_poly)
+
+# ── Optional: noise reduction ─────────────────────────────────────────────────
+# noisereduce is imported lazily — only required if --denoise flag is used.
+noisereduce>=3.0.0,<4.0.0           # Spectral gating noise reduction
+
+# ── Optional: microphone input ────────────────────────────────────────────────
+# PyAudio wraps PortAudio. Only required for --mic mode.
+# If pip install fails on Windows: pip install pipwin && pipwin install pyaudio
+pyaudio>=0.2.14                     # Microphone capture (PortAudio wrapper)
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest>=7.4.0,<9.0.0                # Test runner
+pytest-cov>=4.1.0,<6.0.0           # Coverage reporting

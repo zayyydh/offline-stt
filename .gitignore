@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Model weights — large binary files, downloaded locally
+# Users run: python scripts/download_model.py
+models/*/
+
+# Transcript outputs — user-generated, not source code
+outputs/
+
+# Test coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp files from atomic writes
+*.tmp
+
+# Keep these empty directories in the repo
+!models/.gitkeep
+!outputs/.gitkeep
+!test_audio/.gitkeep
